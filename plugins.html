@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketplace</title>
+  <meta name="description"
+    content="Browse, search, and filter through the complete directory of sovereign Paper & Folia Minecraft plugins.">
+
+  <!-- Typography: Plus Jakarta Sans (Geometric Modern) & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <!-- TOP NAVIGATION BAR (IDENTICAL TO HOMEPAGE) -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="index.html" class="logo-brand" id="logo-top">
+          <span>PocketMC</span>
+        </a>
+      </div>
+
+      <div class="nav-right" style="display: flex; align-items: center; gap: 10px;">
+        <a href="index.html" class="nav-download-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          <span>Back to Home</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- MARKETPLACE HERO & SEARCH SECTION -->
+    <section class="marketplace-hero">
+      <div class="container">
+        <div class="section-head" style="margin-bottom: 24px;">
+          <span class="section-tagline">[OFFICIAL STORE &bull; VERIFIED 1.21.x]</span>
+          <h1 class="section-title" style="font-size: clamp(2.2rem, 4.8vw, 3.4rem); margin-bottom: 14px;">Plugin
+            Marketplace</h1>
+          <p class="section-desc" style="max-width: 620px; margin: 0 auto; font-size: 1.05rem; line-height: 1.6;">
+            Discover, download, and deploy — your one-stop plugin store.
+          </p>
+        </div>
+
+        <!-- Live Search Bar -->
+        <div class="marketplace-search-container">
+          <div class="marketplace-search-box">
+            <svg class="search-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="plugin-search-input" class="marketplace-search-input"
+              placeholder="Search by plugin name, keyword, or tag (e.g. Economy, PvP, Folia)..." autocomplete="off"
+              spellcheck="false" />
+            <button class="search-clear-btn" id="btn-clear-search" aria-label="Clear search">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Category Filter Tabs ("thanh đó") -->
+        <div class="marketplace-filter-tabs">
+          <button class="filter-btn active" data-filter="all">All Plugins (12)</button>
+          <button class="filter-btn" data-filter="economy">Economy & RPG (4)</button>
+          <button class="filter-btn" data-filter="combat">Combat & PvP (3)</button>
+          <button class="filter-btn" data-filter="network">Network & Security (4)</button>
+          <button class="filter-btn" data-filter="utility">Utility & World (1)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALL PLUGINS GRID -->
+    <section class="shop-section" style="padding-top: 0; padding-bottom: 80px;">
+      <div class="container">
+        <div class="plugin-grid" id="marketplace-plugins-grid">
+
+          <!-- Plugin 1: AetherEconomy -->
+          <div class="plugin-card" data-category="economy" data-title="AetherEconomy"
+            data-tags="economy bank inflation crypto vault folia paper">
+            <div class="plugin-card-header">
+              <div class="mc-slot-wrap">
+                <span class="mc-item-icon">?</span>
+              </div>
+              <span class="price-pill">$14.99</span>
+            </div>
+            <h3 class="plugin-title">AetherEconomy</h3>
+            <div class="plugin-meta-row">
+              <span class="tag-badge">[v1.21.4]</span>
+              <span class="tag-badge">[Paper & Folia]</span>
+            </div>
+            <p class="plugin-desc">
+              Dynamic zero-inflation economy engine featuring automated bank interest, crypto vault balances, and
+              multi-threaded transaction safety.
+            </p>
+            <div class="plugin-stats-row">
+              <span class="stat-meta">★ 5.0 (340 REVIEWS)</span>
+              <span class="stat-meta">4.8K DOWNLOADS</span>
+            </div>
+            <div class="plugin-card-action">
+              <button class="btn-card-action btn-card-like" data-plugin="AetherEconomy" title="Wishlist">
+                <svg class="heart-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-cart" data-plugin="AetherEconomy" title="Add to Cart">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-buy" data-plugin="AetherEconomy">
+                <span>Buy Now</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Plugin 2: NexusPvP -->
+          <div class="plugin-card" data-category="combat" data-title="NexusPvP"
+            data-tags="pvp combat knockback ranked arena geyser bedrock">
+            <div class="plugin-card-header">
+              <div class="mc-slot-wrap">
+                <span class="mc-item-icon">?</span>
+              </div>
+              <span class="price-pill">$18.50</span>
+            </div>
+            <h3 class="plugin-title">NexusPvP</h3>
+            <div class="plugin-meta-row">
+              <span class="tag-badge">[v1.21.4]</span>
+              <span class="tag-badge">[Ranked Arenas]</span>
+            </div>
+            <p class="plugin-desc">
+              Custom knockback physics, ranked duel arenas, celestial particle trails, and seamless cross-platform
+              Bedrock Geyser support.
+            </p>
+            <div class="plugin-stats-row">
+              <span class="stat-meta">★ 4.9 (512 REVIEWS)</span>
+              <span class="stat-meta">8.2K DOWNLOADS</span>
+            </div>
+            <div class="plugin-card-action">
+              <button class="btn-card-action btn-card-like" data-plugin="NexusPvP" title="Wishlist">
+                <svg class="heart-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-cart" data-plugin="NexusPvP" title="Add to Cart">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-buy" data-plugin="NexusPvP">
+                <span>Buy Now</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Plugin 3: QuantumEnchants -->
+          <div class="plugin-card" data-category="economy" data-title="QuantumEnchants"
+            data-tags="enchants rpg magic spellbook gui lore async">
+            <div class="plugin-card-header">
+              <div class="mc-slot-wrap">
+                <span class="mc-item-icon">?</span>
+              </div>
+              <span class="price-pill">$19.99</span>
+            </div>
+            <h3 class="plugin-title">QuantumEnchants</h3>
+            <div class="plugin-meta-row">
+              <span class="tag-badge">[500+ ENCHANTS]</span>
+              <span class="tag-badge">[Custom GUI]</span>
+            </div>
+            <p class="plugin-desc">
+              Next-generation RPG spellbooks, animated item lores, celestial dust fusing, and lag-free event listeners
+              built with Spigot async packets.
+            </p>
+            <div class="plugin-stats-row">
+              <span class="stat-meta">★ 5.0 (890 REVIEWS)</span>
+              <span class="stat-meta">12.5K DOWNLOADS</span>
+            </div>
+            <div class="plugin-card-action">
+              <button class="btn-card-action btn-card-like" data-plugin="QuantumEnchants" title="Wishlist">
+                <svg class="heart-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-cart" data-plugin="QuantumEnchants" title="Add to Cart">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-buy" data-plugin="QuantumEnchants">
+                <span>Buy Now</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Plugin 4: SpatialSpigot -->
+          <div class="plugin-card" data-category="network" data-title="SpatialSpigot"
+            data-tags="teleport velocity bungee proxy network sync zero-latency">
+            <div class="plugin-card-header">
+              <div class="mc-slot-wrap">
+                <span class="mc-item-icon">?</span>
+              </div>
+              <span class="price-pill free">FREE</span>
+            </div>
+            <h3 class="plugin-title">SpatialSpigot</h3>
+            <div class="plugin-meta-row">
+              <span class="tag-badge">[OPEN SOURCE]</span>
+              <span class="tag-badge">[Velocity Proxy]</span>
+            </div>
+            <p class="plugin-desc">
+              Zero-latency cross-server teleportation mesh with cryptographic token verification, anti-desync, and
+              instant inventory handshake.
+            </p>
+            <div class="plugin-stats-row">
+              <span class="stat-meta">★ 4.8 (210 REVIEWS)</span>
+              <span class="stat-meta">22.1K DOWNLOADS</span>
+            </div>
+            <div class="plugin-card-action">
+              <button class="btn-card-action btn-card-like" data-plugin="SpatialSpigot" title="Wishlist">
+                <svg class="heart-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-cart" data-plugin="SpatialSpigot" title="Add to Cart">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-buy" data-plugin="SpatialSpigot">
+                <span>Free</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Plugin 5: TitanCore Combat -->
+          <div class="plugin-card" data-category="combat" data-title="TitanCore Combat"
+            data-tags="combat log npc safezone damage hologram anti-glitch">
+            <div class="plugin-card-header">
+              <div class="mc-slot-wrap">
+                <span class="mc-item-icon">?</span>
+              </div>
+              <span class="price-pill">$12.50</span>
+            </div>
+            <h3 class="plugin-title">TitanCore Combat</h3>
+            <div class="plugin-meta-row">
+              <span class="tag-badge">[COMBAT LOG]</span>
+              <span class="tag-badge">[Anti-Glitch]</span>
+            </div>
+            <p class="plugin-desc">
+              Anti-combat logging with NPC clone replacement, damage indicator holograms, and dynamic safezone border
+              enforcement.
+            </p>
+            <div class="plugin-stats-row">
+              <span class="stat-meta">★ 4.9 (420 REVIEWS)</span>
+              <span class="stat-meta">6.4K DOWNLOADS</span>
+            </div>
+            <div class="plugin-card-action">
+              <button class="btn-card-action btn-card-like" data-plugin="TitanCore Combat" title="Wishlist">
+                <svg class="heart-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-cart" data-plugin="TitanCore Combat" title="Add to Cart">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-buy" data-plugin="TitanCore Combat">
+                <span>Buy Now</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Plugin 6: VortexAntiCheat -->
+          <div class="plugin-card" data-category="network" data-title="VortexAntiCheat"
+            data-tags="anticheat machine learning killaura fly reach ai security">
+            <div class="plugin-card-header">
+              <div class="mc-slot-wrap">
+                <span class="mc-item-icon">?</span>
+              </div>
+              <span class="price-pill">$24.99</span>
+            </div>
+            <h3 class="plugin-title">VortexAntiCheat</h3>
+            <div class="plugin-meta-row">
+              <span class="tag-badge">[MACHINE LEARNING]</span>
+              <span class="tag-badge">[0-LAG]</span>
+            </div>
+            <p class="plugin-desc">
+              Heuristic neural-network engine detecting killaura, fly, timer, and subtle reach with sub-1ms check
+              latency and auto-rollback.
+            </p>
+            <div class="plugin-stats-row">
+              <span class="stat-meta">★ 5.0 (1.2K REVIEWS)</span>
+              <span class="stat-meta">15.9K DOWNLOADS</span>
+            </div>
+            <div class="plugin-card-action">
+              <button class="btn-card-action btn-card-like" data-plugin="VortexAntiCheat" title="Wishlist">
+                <svg class="heart-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-cart" data-plugin="VortexAntiCheat" title="Add to Cart">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-buy" data-plugin="VortexAntiCheat">
+                <span>Buy Now</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Plugin 7: NebulaDungeons -->
+          <div class="plugin-card" data-category="combat" data-title="NebulaDungeons"
+            data-tags="dungeons labyrinth bosses ai mythic drops pve">
+            <div class="plugin-card-header">
+              <div class="mc-slot-wrap">
+                <span class="mc-item-icon">?</span>
+              </div>
+              <span class="price-pill">$16.99</span>
+            </div>
+            <h3 class="plugin-title">NebulaDungeons</h3>
+            <div class="plugin-meta-row">
+              <span class="tag-badge">[v1.21.4]</span>
+              <span class="tag-badge">[Mythic Drops]</span>
+            </div>
+            <p class="plugin-desc">
+              Procedural multi-level subterranean labyrinths, custom AI boss mechanics, and thread-safe mythic item
+              drops.
+            </p>
+            <div class="plugin-stats-row">
+              <span class="stat-meta">★ 4.9 (480 REVIEWS)</span>
+              <span class="stat-meta">7.3K DOWNLOADS</span>
+            </div>
+            <div class="plugin-card-action">
+              <button class="btn-card-action btn-card-like" data-plugin="NebulaDungeons" title="Wishlist">
+                <svg class="heart-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-cart" data-plugin="NebulaDungeons" title="Add to Cart">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-buy" data-plugin="NebulaDungeons">
+                <span>Buy Now</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Plugin 8: CosmicAuction -->
+          <div class="plugin-card" data-category="economy" data-title="CosmicAuction"
+            data-tags="auction bin trading market redis economy cross-server">
+            <div class="plugin-card-header">
+              <div class="mc-slot-wrap">
+                <span class="mc-item-icon">?</span>
+              </div>
+              <span class="price-pill">$14.50</span>
+            </div>
+            <h3 class="plugin-title">CosmicAuction</h3>
+            <div class="plugin-meta-row">
+              <span class="tag-badge">[v1.21.4]</span>
+              <span class="tag-badge">[Redis Sync]</span>
+            </div>
+            <p class="plugin-desc">
+              Cross-server auction house with real-time bidding, BIN instant buy, automated fraud detection, and
+              multi-currency support.
+            </p>
+            <div class="plugin-stats-row">
+              <span class="stat-meta">★ 5.0 (610 REVIEWS)</span>
+              <span class="stat-meta">9.8K DOWNLOADS</span>
+            </div>
+            <div class="plugin-card-action">
+              <button class="btn-card-action btn-card-like" data-plugin="CosmicAuction" title="Wishlist">
+                <svg class="heart-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-cart" data-plugin="CosmicAuction" title="Add to Cart">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-buy" data-plugin="CosmicAuction">
+                <span>Buy Now</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Plugin 9: PrismShield -->
+          <div class="plugin-card" data-category="network" data-title="PrismShield"
+            data-tags="ddos firewall botnet filter packet velocity bungee security">
+            <div class="plugin-card-header">
+              <div class="mc-slot-wrap">
+                <span class="mc-item-icon">?</span>
+              </div>
+              <span class="price-pill free">FREE</span>
+            </div>
+            <h3 class="plugin-title">PrismShield</h3>
+            <div class="plugin-meta-row">
+              <span class="tag-badge">[OPEN SOURCE]</span>
+              <span class="tag-badge">[Anti-DDoS]</span>
+            </div>
+            <p class="plugin-desc">
+              Kernel-level Bungee and Velocity packet sanitizer preventing null-ping exploits, SYN flood drops, and
+              botnet spam.
+            </p>
+            <div class="plugin-stats-row">
+              <span class="stat-meta">★ 4.9 (1.4K REVIEWS)</span>
+              <span class="stat-meta">31.2K DOWNLOADS</span>
+            </div>
+            <div class="plugin-card-action">
+              <button class="btn-card-action btn-card-like" data-plugin="PrismShield" title="Wishlist">
+                <svg class="heart-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-cart" data-plugin="PrismShield" title="Add to Cart">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-buy" data-plugin="PrismShield">
+                <span>Free</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Plugin 10: AetherChat -->
+          <div class="plugin-card" data-category="network" data-title="AetherChat"
+            data-tags="chat minimessage discord bridge tooltips hover channels">
+            <div class="plugin-card-header">
+              <div class="mc-slot-wrap">
+                <span class="mc-item-icon">?</span>
+              </div>
+              <span class="price-pill free">FREE</span>
+            </div>
+            <h3 class="plugin-title">AetherChat</h3>
+            <div class="plugin-meta-row">
+              <span class="tag-badge">[MINI-MESSAGE]</span>
+              <span class="tag-badge">[Discord Sync]</span>
+            </div>
+            <p class="plugin-desc">
+              Advanced chat formatting with hover tooltips, item preview displays, cross-network channels, and 2-way
+              Discord link.
+            </p>
+            <div class="plugin-stats-row">
+              <span class="stat-meta">★ 4.9 (950 REVIEWS)</span>
+              <span class="stat-meta">19.7K DOWNLOADS</span>
+            </div>
+            <div class="plugin-card-action">
+              <button class="btn-card-action btn-card-like" data-plugin="AetherChat" title="Wishlist">
+                <svg class="heart-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-cart" data-plugin="AetherChat" title="Add to Cart">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-buy" data-plugin="AetherChat">
+                <span>Free</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Plugin 11: VortexSkills -->
+          <div class="plugin-card" data-category="economy" data-title="VortexSkills"
+            data-tags="skills rpg abilities mana classes leveling mmo">
+            <div class="plugin-card-header">
+              <div class="mc-slot-wrap">
+                <span class="mc-item-icon">?</span>
+              </div>
+              <span class="price-pill">$17.99</span>
+            </div>
+            <h3 class="plugin-title">VortexSkills</h3>
+            <div class="plugin-meta-row">
+              <span class="tag-badge">[500+ ABILITIES]</span>
+              <span class="tag-badge">[MMO Engine]</span>
+            </div>
+            <p class="plugin-desc">
+              15 modular RPG skill branches with custom mana bars, cinematic particle abilities, and zero-tick server
+              impact.
+            </p>
+            <div class="plugin-stats-row">
+              <span class="stat-meta">★ 5.0 (720 REVIEWS)</span>
+              <span class="stat-meta">11.4K DOWNLOADS</span>
+            </div>
+            <div class="plugin-card-action">
+              <button class="btn-card-action btn-card-like" data-plugin="VortexSkills" title="Wishlist">
+                <svg class="heart-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-cart" data-plugin="VortexSkills" title="Add to Cart">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-buy" data-plugin="VortexSkills">
+                <span>Buy Now</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Plugin 12: ChronosBackup -->
+          <div class="plugin-card" data-category="utility" data-title="ChronosBackup"
+            data-tags="backup cloud s3 world snapshot zero-freeze async utility">
+            <div class="plugin-card-header">
+              <div class="mc-slot-wrap">
+                <span class="mc-item-icon">?</span>
+              </div>
+              <span class="price-pill">$19.50</span>
+            </div>
+            <h3 class="plugin-title">ChronosBackup</h3>
+            <div class="plugin-meta-row">
+              <span class="tag-badge">[ZERO FREEZE]</span>
+              <span class="tag-badge">[S3 Cloud]</span>
+            </div>
+            <p class="plugin-desc">
+              Asynchronous live world snapshotting to AWS S3, Google Cloud, and SFTP with zero tick drops or TPS
+              stutter.
+            </p>
+            <div class="plugin-stats-row">
+              <span class="stat-meta">★ 5.0 (530 REVIEWS)</span>
+              <span class="stat-meta">8.6K DOWNLOADS</span>
+            </div>
+            <div class="plugin-card-action">
+              <button class="btn-card-action btn-card-like" data-plugin="ChronosBackup" title="Wishlist">
+                <svg class="heart-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-cart" data-plugin="ChronosBackup" title="Add to Cart">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              </button>
+              <button class="btn-card-action btn-card-buy" data-plugin="ChronosBackup">
+                <span>Buy Now</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Empty State Card (Visible when search yields no matches) -->
+        <div class="empty-search-state" id="empty-search-state">
+          <div class="empty-icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+          <h3 class="empty-title">No Plugins Found</h3>
+          <p class="empty-desc" id="empty-desc-text">
+            We couldn't find any plugins matching your query. Try checking for typos or searching by category like
+            Economy, Combat, or Folia.
+          </p>
+          <button class="btn-reset-filters" id="btn-reset-filters">Reset All Filters</button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+
+  <!-- FOOTER (IDENTICAL TO HOMEPAGE) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="logo-brand">
+          <span>PocketMC</span>
+        </div>
+        <p style="font-family: var(--font-sans); font-size: 0.85rem; color: var(--text-muted);">&copy; 2026 POCKETMC.
+          POWERED BY GSAP & POCKETMC CORE ENGINE.</p>
+        <ul class="footer-nav">
+          <li><a href="index.html#plugins-shop">Plugins</a></li>
+          <li><a href="plugins.html">Marketplace</a></li>
+          <li><a href="index.html#config-editor">Reviews</a></li>
+          <li><a href="index.html#yaml-editor">YAML</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Minecraft Chest Shopping Cart Widget (Draggable anywhere on screen) -->
+  <div class="chest-widget" id="chest-widget">
+    <!-- Popover Shopping Cart Modal -->
+    <div class="chest-modal cart-modal" id="chest-modal" data-lenis-prevent="true">
+      <div class="chest-modal-header">
+        <div class="cart-header-title-wrap">
+          <span class="cart-badge-count-pill" id="cart-items-pill">0 items</span>
+        </div>
+        <button class="chest-modal-close" id="chest-modal-close" aria-label="Close chest" title="Close">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Cart Items List / Empty State -->
+      <div class="cart-items-container" id="cart-items-list" data-lenis-prevent="true">
+        <!-- Rendered dynamically via JS -->
+      </div>
+
+      <!-- Cart Summary Footer -->
+      <div class="cart-modal-footer" id="cart-modal-footer">
+        <div class="cart-total-row">
+          <span class="cart-total-label">Total</span>
+          <span class="cart-total-val" id="cart-total-val">$0.00</span>
+        </div>
+        <button class="btn-cart-checkout" id="btn-cart-checkout">
+          <span>Checkout</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+        <button class="btn-cart-clear" id="btn-cart-clear">Clear Chest</button>
+      </div>
+    </div>
+
+    <!-- The Interactive Draggable Chest Button -->
+    <button class="chest-button" id="chest-button" title="Drag anywhere to move &bull; Click to open cart">
+      <span class="chest-cart-badge" id="chest-cart-badge">0</span>
+      <img id="chest-icon-img" class="chest-img" src="assets/chest-closed.png" alt="Minecraft Chest Cart" width="90"
+        height="90" draggable="false">
+    </button>
+  </div>
+
+  <!-- OFFICIAL GSAP 3 & PLUGINS CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+  <script src="./js/lenis.min.js"></script>
+  <script src="./js/marketplace.js"></script>
+  <script src="./js/cart.js"></script>
+</body>
+
+</html>

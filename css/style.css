@@ -1,0 +1,2619 @@
+/* ==========================================================================
+   POCKETMC // OFFICIAL MINECRAFT PLUGIN MARKETPLACE DESIGN SYSTEM
+   Combines Modern Clean Minimalist Whitespace
+   with Authentic Minecraft Voxel & RPG Aesthetics
+   ========================================================================== */
+
+:root {
+  /* PocketMC Clean White Theme */
+  --bg-page: #ffffff;
+  --bg-surface: #f8f9fa;
+  --bg-surface-hover: #f1f3f4;
+  --bg-card: #ffffff;
+  --bg-card-hover: #ffffff;
+  --bg-glass-nav: rgba(255, 255, 255, 0.92);
+  
+  --text-main: #1f1f1f;
+  --text-body: #45474d;
+  --text-subtle: #5f6368;
+  --text-muted: #80868b;
+  
+  /* Minecraft Authentic Gem & Ore Accents */
+  --mc-emerald: #10b981;
+  --mc-diamond: #00d2ff;
+  --mc-diamond-deep: #0ea5e9;
+  --mc-redstone: #ea4335;
+  --mc-gold: #f59e0b;
+  --mc-amethyst: #a855f7;
+  --mc-lapis: #2563eb;
+  --mc-portal: #9333ea;
+  --mc-netherite: #27272a;
+  
+  --btn-primary-bg: #1f1f1f;
+  --btn-primary-text: #ffffff;
+  --btn-secondary-bg: #f1f3f4;
+  --btn-secondary-text: #1f1f1f;
+  --btn-secondary-hover: #e8eaed;
+
+  --border-subtle: rgba(0, 0, 0, 0.07);
+  --border-medium: #dadce0;
+  --border-active: #1a73e8;
+
+  --shadow-sm: 0 1px 3px rgba(60, 64, 67, 0.08), 0 1px 2px rgba(60, 64, 67, 0.12);
+  --shadow-md: 0 6px 20px rgba(60, 64, 67, 0.12);
+  --shadow-lg: 0 16px 40px rgba(60, 64, 67, 0.16);
+  --shadow-float: 0 25px 60px -10px rgba(0, 0, 0, 0.22);
+
+  /* Typography: Universal Plus Jakarta Sans (Clean Geometric Modern) */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Plus Jakarta Sans', var(--font-sans);
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-pixel: 'Plus Jakarta Sans', var(--font-sans);
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 64px;
+  --space-3xl: 120px;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+
+  /* PocketMC Custom Cursors */
+  --cursor-black: url("../assets/cursor-black.svg") 2 2, url("../assets/cursor-black.png") 2 2, auto;
+  --cursor-black-pointer: url("../assets/cursor-black.svg") 2 2, url("../assets/cursor-black.png") 2 2, pointer;
+  --cursor-white: url("../assets/cursor-white.svg") 2 2, url("../assets/cursor-white.png") 2 2, auto;
+  --cursor-white-pointer: url("../assets/cursor-white.svg") 2 2, url("../assets/cursor-white.png") 2 2, pointer;
+}
+
+/* ==========================================================================
+   LENIS SMOOTH INERTIAL SCROLL & PROGRESS BAR
+   ========================================================================== */
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Section Title Typewriter Effects */
+.type-text-ghost {
+  opacity: 0;
+  visibility: hidden;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================================================
+   FUNCTIONAL MINIMALIST CURSOR SYSTEM (PocketMC Official Custom Cursors)
+   Extracted precisely from user-uploaded vector silhouette
+   ========================================================================== */
+
+/* 1. Default Page Cursor (Black with Crisp White Halo for Light Backgrounds) */
+html, body {
+  cursor: url("../assets/cursor-black.svg") 2 2, url("../assets/cursor-black.png") 2 2, auto;
+}
+
+/* 2. Interactive Light Controls & Links */
+a, button, [role="button"], 
+.btn-pill, .nav-link, .yaml-tab, .filter-btn, 
+.btn-card-action, .btn-see-more, .chest-modal-close,
+.btn-cart-clear, .btn-cart-remove, .search-clear-btn, 
+.plugin-card, .btn-gray, .social-link {
+  cursor: url("../assets/cursor-black.svg") 2 2, url("../assets/cursor-black.png") 2 2, pointer;
+}
+
+/* 3. Dark Elements & Dark CTAs (White Cursor with Crisp Contrast Outline) */
+.btn-black, .btn-black *, .nav-download-btn, .nav-download-btn *,
+.chest-button, .chest-button *, .btn-cart-checkout, .btn-cart-checkout *,
+.yaml-editor-window, .yaml-editor-body, .yaml-code-view, .yaml-code-view *,
+.terminal-modal, .terminal-window, .terminal-box, .terminal-input,
+.footer-section, .footer-section a, .cart-icon-btn, .badge-dark {
+  cursor: url("../assets/cursor-white.svg") 2 2, url("../assets/cursor-white.png") 2 2, auto;
+}
+
+.btn-black:hover, .nav-download-btn:hover, .chest-button:hover, .btn-cart-checkout:hover {
+  cursor: url("../assets/cursor-white.svg") 2 2, url("../assets/cursor-white.png") 2 2, pointer;
+}
+
+/* 4. Text Input & Editable Fields */
+input, textarea, [contenteditable="true"], .terminal-input, .marketplace-search-input {
+  cursor: text;
+}
+
+/* 5. Disabled / Prohibited Elements */
+[disabled], .disabled, button:disabled, [aria-disabled="true"] {
+  cursor: not-allowed !important;
+}
+
+/* ==========================================================================
+   UNIVERSAL TYPOGRAPHY (Strictly Plus Jakarta Sans across the entire website)
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, span, a, button, input, textarea, select,
+li, label, div, strong, b, em {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   NAVIGATION BAR (PocketMC Modern Aesthetic)
+   ========================================================================== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--bg-glass-nav);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-header.scrolled {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xl);
+}
+
+.logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Minecraft 3D Isometric Voxel Cube Logo */
+.voxel-cube-logo {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  display: inline-block;
+  image-rendering: pixelated;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: var(--space-md);
+}
+
+@media (max-width: 1024px) {
+  .nav-menu {
+    display: none;
+  }
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: var(--text-body);
+  font-size: 0.925rem;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--text-main);
+  background: var(--bg-surface-hover);
+}
+
+.nav-chevron {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+
+.nav-download-btn {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-download-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================================
+   HERO SECTION (PocketMC Modern Style + Minecraft Accents)
+   ========================================================================== */
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 140px var(--space-lg) 80px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.hero-center-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: var(--space-xl);
+  user-select: none;
+  padding: 7px 18px;
+  background: #ffffff;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 2;
+  opacity: 1;
+  visibility: visible;
+}
+
+.pixel-tag {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  color: var(--text-main);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.server-dot-live {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+  animation: pulse-green 2s infinite ease-in-out;
+}
+
+@keyframes pulse-green {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+/* ==========================================================================
+   ZERO-GRAVITY SPACE DRIFT MINECRAFT 3D BLOCKS (BAY TỰ DO TRONG KHÔNG GIAN)
+   ========================================================================== */
+
+.hero-container-inner {
+  position: relative;
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  z-index: 3;
+}
+
+.hero-floating-blocks-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 15;
+  overflow: hidden;
+}
+
+.floating-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: auto !important;
+  cursor: grab;
+  will-change: transform, opacity;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  touch-action: none !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -webkit-touch-callout: none !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+.floating-block:active,
+.floating-block.is-dragging {
+  cursor: grabbing !important;
+}
+
+.floating-block-img {
+  display: block;
+  object-fit: contain;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.15)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
+  transition: filter 0.3s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none !important;
+  -webkit-user-drag: none !important;
+  -webkit-touch-callout: none !important;
+  pointer-events: none !important;
+}
+
+.floating-block:hover .floating-block-img,
+.floating-block.is-active .floating-block-img,
+.floating-block.is-dragging .floating-block-img {
+  filter: drop-shadow(0 22px 34px rgba(0, 0, 0, 0.28)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+}
+
+.block-tooltip {
+  position: absolute;
+  bottom: -34px;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: rgba(15, 15, 15, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 5px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  z-index: 1000;
+}
+
+.floating-block:hover .block-tooltip,
+.floating-block:focus .block-tooltip,
+.floating-block.is-active .block-tooltip,
+.floating-block.is-dragging .block-tooltip {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(-50%) translateY(0) !important;
+}
+
+@media (max-width: 900px) {
+  .floating-block-img {
+    width: 66px !important;
+    height: 66px !important;
+  }
+  .block-tooltip {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    bottom: -30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-floating-blocks-wrapper {
+    z-index: 15;
+  }
+  /* On small mobile screens, display the 3 primary Minecraft blocks (Crafting Table, Enchanting Table, Grass Block)
+     giving them generous, spacious room to drift smoothly without overcrowding */
+  .floating-block[data-idx="3"],
+  .floating-block[data-idx="4"] {
+    display: none !important;
+  }
+  .floating-block {
+    pointer-events: auto !important;
+    touch-action: none !important;
+  }
+  .floating-block-img {
+    width: 48px !important;
+    height: 48px !important;
+    pointer-events: none !important;
+  }
+  .block-tooltip {
+    display: block !important;
+    font-size: 0.68rem !important;
+    padding: 4px 9px !important;
+    bottom: -26px !important;
+  }
+}
+
+.hero-headline {
+  font-family: var(--font-sans);
+  font-size: clamp(3rem, 6.8vw, 5.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.038em;
+  color: var(--text-main);
+  max-width: 1100px;
+  margin: 0 auto var(--space-2xl);
+  position: relative;
+  z-index: 2;
+  opacity: 1;
+  visibility: visible;
+}
+
+.hero-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  flex-wrap: nowrap;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-pill {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 14px 30px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: var(--cursor-black-pointer);
+  border: none;
+  white-space: nowrap;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-black {
+  cursor: var(--cursor-white-pointer);
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-black:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+  opacity: 0.92;
+}
+
+.btn-gray {
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border: 1px solid transparent;
+}
+
+.btn-gray:hover {
+  background: var(--btn-secondary-hover);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .hero-btn-group {
+    flex-wrap: nowrap;
+    gap: 10px;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .hero-btn-group .btn-pill {
+    padding: 11px 18px;
+    font-size: 0.88rem;
+    gap: 7px;
+    white-space: nowrap;
+  }
+
+  .hero-btn-group .btn-pill svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-btn-group {
+    gap: 6px;
+    padding: 0 4px;
+  }
+
+  .hero-btn-group .btn-pill {
+    padding: 9px 12px;
+    font-size: 0.8rem;
+    gap: 5px;
+  }
+
+  .hero-btn-group .btn-pill svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* ==========================================================================
+   PLUGIN MARKETPLACE SHOWCASE (SHOP GRID)
+   ========================================================================== */
+
+.shop-section {
+  padding: var(--space-3xl) 0;
+  position: relative;
+}
+
+.section-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto var(--space-2xl);
+}
+
+.shop-section .section-head {
+  margin: 0 auto 16px;
+}
+
+.section-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #1a73e8;
+  text-transform: uppercase;
+  margin-bottom: var(--space-xs);
+  display: block;
+}
+
+.section-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: var(--text-main);
+  margin-bottom: var(--space-md);
+}
+
+.section-desc {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+/* Filter Pills */
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  color: var(--text-body);
+  cursor: var(--cursor-black-pointer);
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: #000;
+  color: #000;
+}
+
+.filter-btn.active {
+  background: #1f1f1f;
+  color: #ffffff;
+  border-color: #1f1f1f;
+}
+
+/* Plugin Cards Grid (Used in catalogue/search pages) */
+.plugin-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-xl);
+  align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+  .plugin-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .plugin-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   SMILE ARC 3D CAROUSEL (HOMEPAGE SHOWCASE)
+   ========================================================================== */
+.plugin-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 0 10px;
+  perspective: 1200px;
+  user-select: none;
+}
+
+.plugin-carousel-stage {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  overflow: visible;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.plugin-carousel-stage.is-dragging,
+.plugin-carousel-stage.is-dragging * {
+  cursor: grabbing !important;
+  user-select: none !important;
+}
+
+.plugin-carousel-stage .plugin-card {
+  position: absolute;
+  width: 370px;
+  max-width: 86vw;
+  height: 500px;
+  min-height: 500px;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  margin-left: -185px;
+  transform-origin: center center;
+  cursor: pointer;
+  touch-action: pan-y;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  contain: layout style;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.plugin-carousel-stage .plugin-card.is-active {
+  cursor: default;
+  border-color: var(--border-medium);
+  box-shadow: 0 32px 64px -14px rgba(0, 0, 0, 0.16), 0 12px 28px -6px rgba(0, 0, 0, 0.08);
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+.plugin-carousel-stage .plugin-card.is-active:hover {
+  border-color: #9ca3af;
+  box-shadow: 0 40px 80px -16px rgba(0, 0, 0, 0.22), 0 16px 32px -6px rgba(0, 0, 0, 0.1);
+}
+
+.plugin-carousel-stage .plugin-card:not(.is-active) {
+  cursor: pointer;
+  border-color: #e5e7eb;
+}
+
+.plugin-carousel-stage .plugin-card:not(.is-active):hover {
+  border-color: #9ca3af;
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.12);
+}
+
+/* Navigation buttons (Arrows on sides) */
+.carousel-nav-btn {
+  position: absolute;
+  top: 52%;
+  transform: translateY(-50%);
+  z-index: 35;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid var(--border-medium);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.04);
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.carousel-nav-btn svg {
+  pointer-events: none;
+}
+
+.carousel-nav-btn:hover {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav-btn:active {
+  transform: translateY(-50%) scale(0.94);
+}
+
+.carousel-nav-btn.prev {
+  left: -20px;
+}
+
+.carousel-nav-btn.next {
+  right: -20px;
+}
+
+@media (max-width: 1200px) {
+  .carousel-nav-btn.prev { left: 6px; }
+  .carousel-nav-btn.next { right: 6px; }
+}
+
+@media (max-width: 640px) {
+  /* Ẩn hoàn toàn 2 mũi tên điều hướng trên điện thoại */
+  .carousel-nav-btn {
+    display: none !important;
+  }
+  .shop-section .section-head {
+    margin: 0 auto 10px;
+  }
+  .plugin-carousel-wrapper {
+    perspective: 1000px;
+    padding: 0 0 10px;
+  }
+  .plugin-carousel-stage {
+    height: 470px;
+    transform-style: preserve-3d;
+  }
+  .plugin-carousel-stage .plugin-card {
+    width: 280px;
+    height: 430px;
+    min-height: 430px;
+    margin-top: -215px;
+    margin-left: -140px;
+    padding: 22px 20px;
+    box-shadow: 0 8px 18px -4px rgba(0, 0, 0, 0.1) !important;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    will-change: transform, opacity;
+  }
+  .plugin-carousel-stage .plugin-card.is-active {
+    box-shadow: 0 12px 26px -6px rgba(0, 0, 0, 0.14) !important;
+  }
+  .plugin-carousel-stage .plugin-card-header {
+    margin-bottom: 12px;
+  }
+  .plugin-carousel-stage .mc-slot-wrap {
+    width: 46px;
+    height: 46px;
+  }
+  .plugin-carousel-stage .mc-item-icon {
+    font-size: 1.35rem;
+  }
+  .plugin-carousel-stage .price-pill {
+    font-size: 0.88rem;
+    padding: 3px 12px;
+  }
+  .plugin-carousel-stage .plugin-title {
+    font-size: 1.22rem;
+    margin-bottom: 4px;
+  }
+  .plugin-carousel-stage .plugin-meta-row {
+    gap: 6px;
+    margin-bottom: 10px;
+    min-height: 24px;
+  }
+  .plugin-carousel-stage .tag-badge {
+    font-size: 0.68rem;
+    padding: 2px 8px;
+  }
+  .plugin-carousel-stage .plugin-desc {
+    font-size: 0.86rem;
+    line-height: 1.48;
+    margin-bottom: 10px;
+    min-height: 52px;
+  }
+  .plugin-carousel-stage .plugin-stats-row {
+    padding-top: 10px;
+    font-size: 0.78rem;
+  }
+  .plugin-carousel-stage .plugin-card-action {
+    margin-top: 10px;
+    gap: 6px;
+  }
+  .plugin-carousel-stage .btn-card-action.btn-card-like,
+  .plugin-carousel-stage .btn-card-action.btn-card-cart {
+    width: 35px;
+    height: 35px;
+  }
+  .plugin-carousel-stage .btn-card-action.btn-card-buy {
+    font-size: 0.82rem;
+    height: 35px;
+  }
+  .carousel-nav-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 380px) {
+  .plugin-carousel-stage {
+    height: 440px;
+  }
+  .plugin-carousel-stage .plugin-card {
+    width: 260px;
+    height: 410px;
+    min-height: 410px;
+    margin-top: -205px;
+    margin-left: -130px;
+    padding: 18px 16px;
+  }
+  .plugin-carousel-stage .plugin-title {
+    font-size: 1.15rem;
+  }
+  .plugin-carousel-stage .plugin-desc {
+    font-size: 0.82rem;
+    min-height: 46px;
+  }
+}
+
+/* Mobile Swipe Hint (Chỉ hiển thị trên điện thoại dưới thanh dots) */
+.carousel-swipe-hint,
+.reviews-swipe-hint {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .carousel-dots-wrap {
+    margin-top: 14px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .carousel-swipe-hint,
+  .reviews-swipe-hint {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #64748b;
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none;
+  }
+
+  /* Chữ cố định tĩnh, không đung đưa theo yêu cầu */
+  .carousel-swipe-hint span,
+  .reviews-swipe-hint span {
+    display: inline-block;
+  }
+
+  /* Ẩn hoàn toàn 2 nút mũi tên của phần Review trên điện thoại */
+  .review-nav-btn {
+    display: none !important;
+  }
+
+  .reviews-controls {
+    margin-top: 20px !important;
+    margin-bottom: 8px !important;
+    height: auto !important;
+    min-height: unset !important;
+  }
+}
+
+/* Pagination indicator dots */
+.carousel-dots-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 60;
+  touch-action: manipulation;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d8d8d8;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+  padding: 0;
+  position: relative;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Vùng chạm rộng hơn cho dot trên mobile */
+.carousel-dot::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: -8px;
+  right: -8px;
+  bottom: -12px;
+}
+
+.carousel-dot.active {
+  width: 26px;
+  border-radius: 999px;
+  background: #111111;
+}
+
+.carousel-dot:hover:not(.active) {
+  background: #888888;
+}
+
+.plugin-card {
+  background: #ffffff;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 490px;
+  transition: box-shadow 0.3s ease, border-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  will-change: transform, opacity;
+}
+
+.plugin-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: #bdc1c6;
+  transition: box-shadow 0.3s ease, border-color 0.25s ease;
+}
+
+.plugin-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+/* Minecraft Item Slot Frame */
+.mc-slot-wrap {
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-md);
+  background: #f1f3f4;
+  border: 2px solid #dadce0;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.85rem;
+  position: relative;
+  user-select: none;
+}
+
+.mc-item-icon {
+  display: inline-block;
+  font-family: var(--font-mono), monospace;
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: #64748b;
+  line-height: 1;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+}
+
+.plugin-card:hover .mc-item-icon {
+  transform: scale(1.15);
+  color: #000000;
+}
+
+.price-pill {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface);
+  color: var(--text-main);
+  border: 1px solid var(--border-medium);
+}
+
+.price-pill.free {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+.plugin-title {
+  font-family: var(--font-sans);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  margin-bottom: var(--space-xs);
+  line-height: 1.25;
+}
+
+.plugin-meta-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: var(--space-md);
+  align-items: center;
+  flex-wrap: nowrap;
+  min-height: 28px;
+}
+
+.tag-badge {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  color: var(--text-subtle);
+  background: var(--bg-surface);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  white-space: nowrap;
+}
+
+.plugin-desc {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-body);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+  flex-grow: 1;
+  min-height: 75px;
+}
+
+.plugin-stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: auto;
+}
+
+.plugin-card-action {
+  margin-top: var(--space-md);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto !important;
+}
+
+.btn-card-action {
+  outline: none;
+  user-select: none;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto !important;
+}
+
+.btn-card-like {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--border-medium);
+  background: #ffffff;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: var(--cursor-black-pointer);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.btn-card-like:hover {
+  border-color: #ea4335;
+  color: #ea4335;
+  background: #fff1f2;
+  transform: scale(1.08);
+}
+
+.btn-card-like.liked {
+  background: #fee2e2;
+  border-color: #ea4335;
+  color: #ea4335;
+}
+
+.btn-card-like.liked .heart-icon {
+  fill: #ea4335;
+  stroke: #ea4335;
+}
+
+.btn-card-cart {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--border-medium);
+  background: #ffffff;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: var(--cursor-black-pointer);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.btn-card-cart:hover {
+  border-color: #000000;
+  background: #f8fafc;
+  transform: scale(1.08);
+}
+
+.btn-card-cart.added {
+  background: #ecfdf5;
+  border-color: #10b981;
+  color: #059669;
+}
+
+.btn-card-buy {
+  flex: 1;
+  height: 38px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: #111418;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: var(--cursor-white-pointer);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+
+.btn-card-buy:hover {
+  background: #000000;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+}
+
+.btn-card-buy.bought {
+  background: #10b981 !important;
+}
+
+.nav-cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid var(--border-medium);
+  color: var(--text-main);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-left: 4px;
+}
+
+.nav-cart-btn:hover {
+  border-color: #000000;
+  transform: translateY(-1px);
+}
+
+.cart-badge-count {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #ea4335;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+}
+
+/* ==========================================================================
+   SEE MORE PLUGINS SECTION (Minimalist PocketMC aesthetic)
+   ========================================================================== */
+
+.see-more-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  gap: 8px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+.btn-see-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #ffffff;
+  color: var(--text-main);
+  border: 1px solid var(--border-medium);
+  padding: 13px 32px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.btn-see-more:hover {
+  border-color: #000000;
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-see-more:active {
+  transform: translateY(0);
+}
+
+.see-more-icon {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-see-more:hover .see-more-icon {
+  transform: translateY(2px);
+}
+
+.btn-see-more.loading {
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.see-more-caption {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-subtle);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* Floating State Class applied when floating physics is toggled */
+.is-floating {
+  transition: box-shadow 0.4s ease;
+  box-shadow: var(--shadow-float) !important;
+}
+
+
+
+/* ==========================================================================
+   CUSTOMER REVIEWS & BENCHMARKS SECTION (TESTIMONIALS)
+   ========================================================================== */
+
+.reviews-section {
+  padding: var(--space-3xl) 0;
+  background: #ffffff;
+}
+
+.reviews-container-wrap {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 6px;
+  will-change: transform;
+  overflow: hidden;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 980px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.review-card {
+  background: #ffffff;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 24px 22px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 335px;
+  min-height: 335px;
+  max-height: 335px;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  will-change: transform, opacity;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  border-color: #000000;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.review-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.review-user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.avatar-cyan    { background: linear-gradient(135deg, #06b6d4, #0284c7); }
+.avatar-purple  { background: linear-gradient(135deg, #8b5cf6, #6366f1); }
+.avatar-emerald { background: linear-gradient(135deg, #10b981, #059669); }
+.avatar-amber   { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.avatar-rose    { background: linear-gradient(135deg, #f43f5e, #e11d48); }
+.avatar-indigo  { background: linear-gradient(135deg, #6366f1, #4f46e5); }
+
+.review-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-author {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.review-role {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  color: var(--text-subtle);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.review-rating .stars {
+  color: #f59e0b;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  user-select: none;
+}
+
+.review-plugin-tag {
+  margin-bottom: 12px;
+}
+
+.review-content {
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  line-height: 1.58;
+  color: #334155;
+  margin-bottom: 14px;
+  height: 110px;
+  min-height: 110px;
+  max-height: 110px;
+  overflow: hidden;
+}
+
+.review-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.76rem;
+  color: var(--text-subtle);
+  font-weight: 500;
+}
+
+.review-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #059669;
+  font-weight: 600;
+}
+
+.reviews-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+  height: 40px;
+  min-height: 40px;
+  user-select: none;
+}
+
+.review-nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-pill);
+  background: #ffffff;
+  border: 1px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: var(--cursor-black-pointer);
+  color: var(--text-main);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.review-nav-btn:hover {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+  transform: scale(1.06);
+  cursor: var(--cursor-white-pointer);
+}
+
+.review-nav-btn:active {
+  transform: scale(0.96);
+}
+
+.review-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.review-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: #d1d5db;
+  cursor: var(--cursor-black-pointer);
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
+  position: relative;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.review-dot::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: -8px;
+  right: -8px;
+  bottom: -12px;
+}
+
+.review-dot.active {
+  width: 24px;
+  background: #000000;
+}
+
+/* ==========================================================================
+   MINECRAFT LIVE YAML CONFIG STUDIO (Replaces Terminal CLI)
+   ========================================================================== */
+
+.yaml-section,
+.terminal-section {
+  padding: var(--space-3xl) 0;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.yaml-studio-box,
+.terminal-box {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #0f141c;
+  border: 1px solid #232d3d;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.25);
+}
+
+.yaml-topbar,
+.terminal-topbar {
+  background: #161e2b;
+  border-bottom: 1px solid #232d3d;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  overflow: hidden;
+}
+
+.terminal-lights {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.terminal-light {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+.light-red { background: #ef4444; }
+.light-yellow { background: #f59e0b; }
+.light-green { background: #10b981; }
+
+.yaml-tabs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  flex: 1;
+  min-width: 0;
+  scrollbar-width: none !important;
+}
+
+.yaml-tabs::-webkit-scrollbar {
+  display: none !important;
+  height: 0;
+}
+
+.yaml-tab {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #94a3b8;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: var(--cursor-white-pointer);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.yaml-tab:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.yaml-tab.active {
+  color: #00d2ff;
+  background: #0f141c;
+  border-color: #232d3d;
+  font-weight: 600;
+}
+
+.yaml-editor-body {
+  display: flex;
+  min-height: 280px;
+  max-height: 480px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  background: #0f141c;
+  position: relative;
+  scrollbar-width: thin;
+  scrollbar-color: #232d3d #0f141c;
+}
+
+.yaml-editor-body::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.yaml-editor-body::-webkit-scrollbar-track {
+  background: #0f141c;
+}
+
+.yaml-editor-body::-webkit-scrollbar-thumb {
+  background: #232d3d;
+  border-radius: 4px;
+}
+
+.yaml-editor-body::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+.yaml-line-numbers {
+  padding: 16px 12px;
+  background: #0a0d13;
+  color: #4b5563;
+  text-align: right;
+  user-select: none;
+  border-right: 1px solid #1c2431;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.65;
+  min-width: 42px;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.yaml-code-view {
+  flex: 1;
+  padding: 16px 20px;
+  margin: 0;
+  color: #e2e8f0;
+  white-space: pre;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  min-width: fit-content;
+}
+
+@media (max-width: 640px) {
+  .yaml-topbar,
+  .terminal-topbar {
+    padding: 8px 12px;
+    gap: 10px;
+  }
+  .yaml-editor-body {
+    max-height: 380px;
+    font-size: 0.8rem;
+  }
+  .yaml-line-numbers {
+    padding: 12px 8px;
+    min-width: 34px;
+    font-size: 0.76rem;
+  }
+  .yaml-code-view {
+    padding: 12px 14px;
+    font-size: 0.8rem;
+  }
+  .yaml-tab {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Blinking Terminal Cursor in YAML Editor */
+.yaml-cursor {
+  display: inline-block;
+  color: #00d2ff;
+  font-weight: 700;
+  margin-left: 2px;
+  animation: yaml-cursor-blink 0.8s infinite ease-in-out;
+}
+
+@keyframes yaml-cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Syntax Highlighting */
+.yaml-comment { color: #6272a4; font-style: italic; }
+.yaml-key { color: #38bdf8; font-weight: 600; }
+.yaml-str { color: #50fa7b; }
+.yaml-num { color: #f1fa8c; }
+.yaml-bool { color: #ff79c6; font-weight: 600; }
+.yaml-punc { color: #f8f8f2; }
+
+
+
+/* Floating Toast Notifications (Disabled as requested) */
+.pocket-toast {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+/* ==========================================================================
+   METRICS SECTION
+   ========================================================================== */
+
+.metrics-section {
+  padding: var(--space-3xl) 0;
+  background: #ffffff;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+}
+
+.metric-card h4 {
+  font-family: var(--font-sans);
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
+  line-height: 1.1;
+  margin-bottom: var(--space-xs);
+}
+
+.metric-card p {
+  color: var(--text-subtle);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.site-footer {
+  padding: var(--space-2xl) 0 var(--space-xl);
+  background: #ffffff;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  font-size: 0.875rem;
+  color: var(--text-subtle);
+}
+
+.footer-nav {
+  display: flex;
+  gap: var(--space-lg);
+  list-style: none;
+}
+
+.footer-nav a {
+  color: var(--text-body);
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  color: var(--text-main);
+}
+
+
+
+
+
+/* Magnetic Button Base */
+.magnetic-btn {
+  will-change: transform;
+}
+
+.stat-meta {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-subtle);
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
+   FLOATING MYSTERY CHEST WIDGET (Bottom-Right Corner)
+   ========================================================================== */
+
+.chest-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.chest-button {
+  background: transparent;
+  border: none;
+  cursor: grab;
+  padding: 0;
+  outline: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: chest-idle 3.5s ease-in-out infinite;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  touch-action: none !important;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.chest-button:active {
+  cursor: grabbing;
+}
+
+.chest-button:hover {
+  transform: scale(1.08) translateY(-4px);
+}
+
+.chest-img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.22));
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+  touch-action: none !important;
+}
+
+.chest-button:hover .chest-img {
+  filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.35));
+}
+
+.chest-widget.open .chest-button,
+.chest-widget.is-dragging .chest-button {
+  animation: none !important;
+  transform: none !important;
+}
+
+.chest-widget.is-dragging,
+.chest-widget.is-dragging * {
+  transition: none !important;
+}
+
+@keyframes chest-idle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Badge on chest showing number of items */
+.chest-cart-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: #ef4444;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 800;
+  min-width: 28px;
+  height: 28px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  box-shadow: 0 3px 10px rgba(239, 68, 68, 0.6), 0 1px 3px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  border: 2.5px solid #ffffff;
+  transform: scale(0);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.chest-cart-badge.has-items {
+  transform: scale(1);
+}
+
+/* Shopping Cart Modal Popup */
+.chest-modal.cart-modal {
+  position: absolute;
+  width: 320px;
+  max-width: calc(100vw - 28px);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 16px 18px;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.22), 0 4px 16px rgba(0, 0, 0, 0.06);
+  display: none;
+  pointer-events: auto;
+  z-index: 100001;
+  touch-action: auto !important;
+  overscroll-behavior: contain;
+  will-change: transform, opacity;
+}
+
+.chest-modal.cart-modal.open {
+  display: block;
+}
+
+.chest-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.cart-header-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-badge-count-pill {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.chest-modal-close {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  cursor: var(--cursor-black-pointer);
+  padding: 0;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.chest-modal-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+  transform: scale(1.08);
+}
+
+.cart-items-container {
+  max-height: 220px;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+  touch-action: pan-y !important;
+  -webkit-overflow-scrolling: touch !important;
+  margin: 10px 0;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+}
+
+.cart-items-container::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Edge */
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.cart-items-container:empty,
+.cart-items-container:has(.cart-empty-state) {
+  overflow-y: hidden !important;
+}
+
+.cart-empty-state {
+  text-align: center;
+  padding: 28px 12px;
+  color: #64748b;
+}
+
+.cart-empty-title {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.02em;
+}
+
+.cart-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background: #f8fafc;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  transition: background 0.15s ease;
+}
+
+.cart-item-row:hover {
+  background: #f1f5f9;
+}
+
+.cart-item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.cart-item-icon {
+  font-size: 1.15rem;
+  width: 32px;
+  height: 32px;
+  background: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.cart-item-info {
+  min-width: 0;
+}
+
+.cart-item-name {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cart-item-price {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.cart-item-price.free {
+  color: #6366f1;
+}
+
+.btn-cart-remove {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  cursor: var(--cursor-black-pointer);
+  padding: 0;
+  transition: all 0.18s ease;
+  flex-shrink: 0;
+}
+
+.btn-cart-remove:hover {
+  color: #ef4444;
+  background: #fee2e2;
+  transform: scale(1.08);
+}
+
+.cart-modal-footer {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 12px;
+}
+
+.cart-total-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.cart-total-label {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.cart-total-val {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.btn-cart-checkout {
+  width: 100%;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: var(--cursor-white-pointer);
+  transition: all 0.2s ease;
+}
+
+.btn-cart-checkout:hover {
+  background: #1f2937;
+  transform: translateY(-1px);
+}
+
+.btn-cart-checkout.success {
+  background: #10b981 !important;
+}
+
+.btn-cart-clear {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: transparent;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 8px;
+  cursor: var(--cursor-black-pointer);
+  transition: color 0.15s ease;
+}
+
+.btn-cart-clear:hover {
+  color: #ef4444;
+}
+
+@media (max-width: 640px) {
+  .chest-img {
+    width: 76px;
+    height: 76px;
+  }
+
+  .chest-cart-badge {
+    top: 3px;
+    right: 3px;
+    min-width: 25px;
+    height: 25px;
+    font-size: 0.88rem;
+    font-weight: 800;
+    border-width: 2px;
+  }
+
+  .chest-modal.cart-modal {
+    width: calc(100vw - 24px) !important;
+    max-width: 320px;
+    padding: 14px 14px;
+  }
+}
+
+/* ==========================================================================
+   MARKETPLACE SEARCH & CATALOGUE (PLUGINS.HTML)
+   ========================================================================== */
+
+.marketplace-hero {
+  padding: 140px 0 40px;
+  background: radial-gradient(circle at 50% 10%, rgba(0, 0, 0, 0.03) 0%, transparent 70%);
+  text-align: center;
+}
+
+.marketplace-search-container {
+  max-width: 680px;
+  margin: 32px auto 24px;
+  position: relative;
+}
+
+.marketplace-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  padding: 6px 14px 6px 20px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.marketplace-search-box:focus-within {
+  border-color: #000000;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+}
+
+.search-icon-svg {
+  color: #94a3b8;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.marketplace-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  padding: 8px 0;
+}
+
+.marketplace-search-input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.search-clear-btn {
+  background: #f1f5f9;
+  border: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: var(--cursor-black-pointer);
+  color: #64748b;
+  padding: 0;
+  line-height: 1;
+  transition: all 0.2s ease;
+  margin-left: 8px;
+  flex-shrink: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.search-clear-btn svg {
+  display: block;
+  pointer-events: none;
+}
+
+.search-clear-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.search-clear-btn:hover {
+  background: #e2e8f0;
+  color: #000000;
+}
+
+.search-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 28px;
+  padding: 0 4px;
+}
+
+.search-counter-badge {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-subtle);
+  background: #f8fafc;
+  border: 1px solid var(--border-subtle);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+}
+
+.marketplace-filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 16px auto 36px;
+}
+
+/* Empty State */
+.empty-search-state {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 64px 24px;
+  background: #ffffff;
+  border: 1px dashed var(--border-medium);
+  border-radius: var(--radius-lg);
+  margin: 20px auto 40px;
+  max-width: 600px;
+}
+
+.empty-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: #64748b;
+}
+
+.empty-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.empty-desc {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--text-subtle);
+  max-width: 440px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn-reset-filters {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: var(--cursor-white-pointer);
+  transition: all 0.2s ease;
+}
+
+.btn-reset-filters:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   FLYING LOOT ITEM & CHEST CATCH ANIMATION
+   ========================================================================== */
+
+.flying-loot-item {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 999999;
+  will-change: transform, opacity;
+  transform: translate(-50%, -50%);
+}
+
+.flying-loot-item img,
+.flying-loot-item .loot-diamond-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+}
+
+.chest-burst-loot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 999999;
+  will-change: transform, opacity;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+}
+
+.chest-burst-loot img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.flying-loot-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 999998;
+  will-change: transform, opacity;
+  transform: translate(-50%, -50%);
+}
+
+.chest-sparkle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  font-size: 1.25rem;
+  line-height: 1;
+  z-index: 999999;
+  will-change: transform, opacity;
+  transform: translate(-50%, -50%);
+}
+
+.chest-receiving .chest-img {
+  filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.38)) !important;
+}
+
