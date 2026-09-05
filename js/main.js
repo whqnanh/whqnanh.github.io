@@ -1091,7 +1091,7 @@ class PocketMCApp {
           plugin: "[AetherEconomy v1.21]",
           stars: "★★★★★",
           content: "“Tôi không thể tin được nó quá điên rồ”",
-          date: "Vừa xong"
+          date: "Just now"
         },
         {
           author: "Đăng Khoa",
@@ -1101,7 +1101,7 @@ class PocketMCApp {
           plugin: "[NexusPvP Arena]",
           stars: "★★★★★",
           content: "“Tôi đã khóc vì quá xúc động”",
-          date: "1 giờ trước"
+          date: "1 hour ago"
         },
         {
           author: "Lê Nguyễn",
@@ -1111,7 +1111,7 @@ class PocketMCApp {
           plugin: "[QuantumEnchants]",
           stars: "★★★★★",
           content: "“Bá đạo trên từng hạt gạo”",
-          date: "3 giờ trước"
+          date: "3 hours ago"
         }
       ],
       // Page 1
@@ -2019,13 +2019,13 @@ protection:
 
     updateNavButtonPlacement();
 
-    // 5-Card Smile Arc Geometry (Tối ưu hóa GPU: Không dùng filter blur, mobile chạy 2D mượt mà)
+    // 5-Card Smile Arc Geometry (Tối ưu hóa GPU: Khoảng cách các thẻ gần nhau hơn, hài hòa và liền mạch)
     const getGeometry = (diff, screenWidth) => {
       const isMobile = screenWidth <= 640;
       const isTablet = screenWidth <= 1024 && !isMobile;
 
       if (isMobile) {
-        const sideOffset = screenWidth <= 380 ? 170 : 195;
+        const sideOffset = screenWidth <= 380 ? 145 : 165;
         if (diff === 0) {
           return { x: 0, y: 12, scale: 1, rotZ: 0, rotY: 0, opacity: 1, zIndex: 30, pointerEvents: "auto" };
         } else if (diff === 1) {
@@ -2034,41 +2034,41 @@ protection:
           return { x: -sideOffset, y: -6, scale: 0.84, rotZ: -3.5, rotY: 9, opacity: 0.78, zIndex: 20, pointerEvents: "auto" };
         } else {
           const sign = diff > 0 ? 1 : -1;
-          return { x: sign * 320, y: -30, scale: 0.65, rotZ: 0, rotY: 0, opacity: 0, zIndex: 1, pointerEvents: "none" };
+          return { x: sign * 260, y: -30, scale: 0.65, rotZ: 0, rotY: 0, opacity: 0, zIndex: 1, pointerEvents: "none" };
         }
       }
 
       if (isTablet) {
         if (diff === 0) {
-          return { x: 0, y: 22, scale: 1, rotZ: 0, rotY: 0, opacity: 1, zIndex: 30, pointerEvents: "auto" };
+          return { x: 0, y: 20, scale: 1, rotZ: 0, rotY: 0, opacity: 1, zIndex: 30, pointerEvents: "auto" };
         } else if (diff === 1) {
-          return { x: 290, y: -10, scale: 0.86, rotZ: 3.5, rotY: -6, opacity: 0.85, zIndex: 20, pointerEvents: "auto" };
+          return { x: 215, y: -8, scale: 0.86, rotZ: 3, rotY: -6, opacity: 0.85, zIndex: 20, pointerEvents: "auto" };
         } else if (diff === -1) {
-          return { x: -290, y: -10, scale: 0.86, rotZ: -3.5, rotY: 6, opacity: 0.85, zIndex: 20, pointerEvents: "auto" };
+          return { x: -215, y: -8, scale: 0.86, rotZ: -3, rotY: 6, opacity: 0.85, zIndex: 20, pointerEvents: "auto" };
         } else if (diff === 2) {
-          return { x: 520, y: -50, scale: 0.74, rotZ: 6.5, rotY: -12, opacity: 0.5, zIndex: 10, pointerEvents: "auto" };
+          return { x: 390, y: -40, scale: 0.74, rotZ: 5.5, rotY: -11, opacity: 0.5, zIndex: 10, pointerEvents: "auto" };
         } else if (diff === -2) {
-          return { x: -520, y: -50, scale: 0.74, rotZ: -6.5, rotY: 12, opacity: 0.5, zIndex: 10, pointerEvents: "auto" };
+          return { x: -390, y: -40, scale: 0.74, rotZ: -5.5, rotY: 11, opacity: 0.5, zIndex: 10, pointerEvents: "auto" };
         } else {
           const sign = diff > 0 ? 1 : -1;
-          return { x: sign * 680, y: -100, scale: 0.6, rotZ: 0, rotY: 0, opacity: 0, zIndex: 1, pointerEvents: "none" };
+          return { x: sign * 520, y: -80, scale: 0.6, rotZ: 0, rotY: 0, opacity: 0, zIndex: 1, pointerEvents: "none" };
         }
       }
 
-      // Desktop layout (Đúng 5 thẻ cung môi cười, siêu sắc nét, 0% blur)
+      // Desktop layout (5 thẻ gần nhau, bố cục gọn gàng và thẩm mỹ)
       if (diff === 0) {
-        return { x: 0, y: 28, scale: 1, rotZ: 0, rotY: 0, opacity: 1, zIndex: 30, pointerEvents: "auto" };
+        return { x: 0, y: 22, scale: 1, rotZ: 0, rotY: 0, opacity: 1, zIndex: 30, pointerEvents: "auto" };
       } else if (diff === 1) {
-        return { x: 365, y: -14, scale: 0.88, rotZ: 4.5, rotY: -10, opacity: 0.85, zIndex: 20, pointerEvents: "auto" };
+        return { x: 255, y: -8, scale: 0.88, rotZ: 3.5, rotY: -8, opacity: 0.85, zIndex: 20, pointerEvents: "auto" };
       } else if (diff === -1) {
-        return { x: -365, y: -14, scale: 0.88, rotZ: -4.5, rotY: 10, opacity: 0.85, zIndex: 20, pointerEvents: "auto" };
+        return { x: -255, y: -8, scale: 0.88, rotZ: -3.5, rotY: 8, opacity: 0.85, zIndex: 20, pointerEvents: "auto" };
       } else if (diff === 2) {
-        return { x: 675, y: -75, scale: 0.76, rotZ: 9, rotY: -18, opacity: 0.55, zIndex: 10, pointerEvents: "auto" };
+        return { x: 465, y: -48, scale: 0.76, rotZ: 7, rotY: -14, opacity: 0.55, zIndex: 10, pointerEvents: "auto" };
       } else if (diff === -2) {
-        return { x: -675, y: -75, scale: 0.76, rotZ: -9, rotY: 18, opacity: 0.55, zIndex: 10, pointerEvents: "auto" };
+        return { x: -465, y: -48, scale: 0.76, rotZ: -7, rotY: 14, opacity: 0.55, zIndex: 10, pointerEvents: "auto" };
       } else {
         const sign = diff > 0 ? 1 : -1;
-        return { x: sign * 880, y: -140, scale: 0.65, rotZ: 0, rotY: 0, opacity: 0, zIndex: 1, pointerEvents: "none" };
+        return { x: sign * 640, y: -100, scale: 0.65, rotZ: 0, rotY: 0, opacity: 0, zIndex: 1, pointerEvents: "none" };
       }
     };
 
@@ -2303,7 +2303,7 @@ protection:
           // Animate mượt mà thẻ vừa rời khỏi mép (absDiff === maxActiveCards + 1) để trượt ra ngoài êm ái, không biến mất đột ngột
           if (absDiff === maxActiveCards + 1 && card.style.visibility !== "hidden") {
             const sign = diff > 0 ? 1 : -1;
-            const exitX = geo.x || (sign * (isMobile ? 320 : 880));
+            const exitX = geo.x || (sign * (isMobile ? 260 : 640));
             card.style.pointerEvents = "none";
             card.style.zIndex = "5";
 
@@ -2333,7 +2333,7 @@ protection:
         // Nếu thẻ trước đó đang ẩn, khởi tạo vị trí xuất phát từ mép ngoài để trượt vào tự nhiên
         if (card.style.visibility === "hidden" || Number(card.style.opacity || 0) === 0) {
           const sign = diff > 0 ? 1 : -1;
-          const enterStartX = geo.x + (sign * (isMobile ? 70 : 140));
+          const enterStartX = geo.x + (sign * (isMobile ? 60 : 100));
           gsap.set(card, {
             x: enterStartX,
             y: geo.y,

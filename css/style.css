@@ -823,7 +823,7 @@ li, label, div, strong, b, em {
   position: absolute;
   top: 52%;
   transform: translateY(-50%);
-  z-index: 35;
+  z-index: 40;
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -1486,10 +1486,14 @@ li, label, div, strong, b, em {
   box-sizing: border-box;
 }
 
-.review-card:hover {
-  transform: translateY(-5px);
-  border-color: #000000;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+.review-card:hover,
+.review-card:focus,
+.review-card:active,
+.review-card:focus-within {
+  transform: none;
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-sm);
+  outline: none;
 }
 
 .review-card-header {
